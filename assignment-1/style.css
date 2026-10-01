@@ -119,11 +119,11 @@ h2 {
 }
 
 .image_div {
-    animation: move 4s ease-in-out infinite;
+    animation: move 4s  infinite;
 }
 
 .heading_div {
-    animation: move 4s ease-in-out infinite reverse;
+    animation: move 4s infinite ;
 }
 
 @keyframes move {
