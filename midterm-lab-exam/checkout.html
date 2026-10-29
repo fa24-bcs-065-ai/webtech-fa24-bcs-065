@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Uniworth</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .field input,
+    .field select {
+      border: 1px solid #d1d5db;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+      outline: none;
+      width: 100%;
+    }
+
+    .err {
+      display: none;
+      color: #ef4444;
+      font-size: 0.75rem;
+    }
+
+    input:user-invalid ~ .err,
+    input:not(:placeholder-shown):invalid ~ .err,
+    select:user-invalid ~ .err {
+      display: block;
+    }
+
+    input:user-invalid,
+    input:not(:placeholder-shown):invalid,
+    select:user-invalid {
+      border-color: #ef4444;
+    }
+
+    @media (min-width: 665px) {
+      .fieldsets-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      .field {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        grid-template-rows: auto auto;
+        align-items: center;
+        gap: 0.4rem 1rem;
+      }
+
+      .field label {
+        grid-column: 1;
+        grid-row: 1;
+        text-align: right;
+        font-size: 0.875rem;
+      }
+
+      .field input,
+      .field select {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .field .err {
+        grid-column: 2;
+        grid-row: 2;
+      }
+    }
+
+    fieldset {
+      border: 1px solid #e5e7eb;
+      padding: 1.5rem;
+    }
+
+    legend {
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0 0.5rem;
+      color: hsl(95, 70%, 45%);
+    }
+  </style>
+</head>
+<body class="bg-white">
+
+  <nav class="relative px-6 py-4 flex justify-between items-center border-b">
+    <img src="logo.png" alt="Uniworth Logo" class="h-12">
+    <ul class="hidden min-[665px]:flex gap-8 text-sm font-medium items-center">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="flex items-center gap-4">
+      <a href="checkout.html">🛒</a>
+      <button class="min-[665px]:hidden text-2xl" onclick="document.getElementById('menu').classList.toggle('hidden')">☰</button>
+    </div>
+  </nav>
+
+  <ul id="menu" class="hidden min-[665px]:hidden flex flex-col gap-2 px-6 py-4 bg-white text-sm font-medium border-b">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#">Shop</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+
+  <main class="px-6 py-10 max-w-5xl mx-auto">
+    <h1 class="text-2xl font-bold mb-8">Checkout</h1>
+
+    <form novalidate>
+      <div class="fieldsets-row">
+
+        <fieldset>
+          <legend>Contact</legend>
+
+          <div class="field">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Full Name" required>
+            <span class="err">Full name is required</span>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            <span class="err">Enter a valid email address</span>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="03XX-XXXXXXX" pattern="03[0-9]{2}-[0-9]{7}" required>
+            <span class="err">Format must be 03XX-XXXXXXX</span>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Delivery</legend>
+
+          <div class="field">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" placeholder="Street address" required>
+            <span class="err">Address is required</span>
+          </div>
+
+          <div class="field">
+            <label for="city">City</label>
+            <select id="city" name="city" required>
+              <option value="">Select City</option>
+              <option value="lahore">Lahore</option>
+              <option value="karachi">Karachi</option>
+              <option value="islamabad">Islamabad</option>
+              <option value="multan">Multan</option>
+              <option value="faisalabad">Faisalabad</option>
+            </select>
+            <span class="err">Please select a city</span>
+          </div>
+
+          <div class="field">
+            <label for="date">Delivery Date</label>
+            <input type="date" id="date" name="date" min="2026-10-28" max="2027-01-01" required>
+            <span class="err">Date must be between 28 Oct 2026 and 1 Jan 2027</span>
+          </div>
+        </fieldset>
+
+      </div>
+
+      <button type="submit" class="w-full py-3 mt-8 text-white text-sm font-semibold" style="background-color: hsl(95, 70%, 45%)">Place Order</button>
+    </form>
+  </main>
+
+  <footer class="bg-gray-100 px-6 py-10 mt-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div>
+        <img src="logo.png" alt="Uniworth Logo" class="h-10 mb-3">
+        <p class="text-sm text-gray-600">Uniworth is a menswear brand, designed entirely in-house. Pakistan's no. 1 Shirt Brand.</p>
+      </div>
+      <div>
+        <h3 class="font-bold mb-3">Information</h3>
+        <ul class="text-sm space-y-2">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold mb-3">Customer Services</h3>
+        <ul class="text-sm space-y-2">
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Payment Options</a></li>
+          <li><a href="#">FAQ's</a></li>
+          <li><a href="#">Returns and Exchange</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold mb-3">Store Information</h3>
+        <ul class="text-sm space-y-2">
+          <li>042 111 789 456</li>
+          <li>+92 345 4037778</li>
+          <li>askus@uniworthshop.com</li>
+          <li>Mon-Sat: 10AM - 6PM</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
