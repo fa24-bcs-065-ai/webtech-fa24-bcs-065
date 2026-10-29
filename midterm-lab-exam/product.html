@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crew Neck Shirt - Uniworth</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white">
+
+  <nav class="px-6 py-4 flex justify-between items-center border-b">
+    <img src="logo.png" alt="Uniworth Logo" class="h-12">
+    <ul class="hidden md:flex gap-8 text-sm font-medium">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="flex items-center gap-4">
+      <span>🛒</span>
+      <button class="md:hidden text-2xl" onclick="document.getElementById('menu').classList.toggle('hidden')">☰</button>
+    </div>
+  </nav>
+
+  <ul id="menu" class="hidden md:hidden flex flex-col gap-4 px-6 py-4 bg-white text-sm font-medium border-b">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#">Shop</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+
+  <main class="px-6 py-10">
+    <div class="flex flex-col md:flex-row gap-10">
+
+      <div class="md:w-1/2">
+        <img src="shirt.jpg" alt="Crew Neck Shirt" class="w-full object-cover">
+      </div>
+
+      <div class="md:w-1/2">
+        <h1 class="text-2xl font-bold mb-1">Crew Neck Shirt</h1>
+        <p class="text-gray-400 text-sm mb-3">SKU: UW1001</p>
+        <p class="text-xl font-semibold mb-6">PKR 3,500</p>
+
+        <p class="text-sm font-medium mb-3">Size</p>
+        <div class="grid grid-cols-3 gap-2 mb-6">
+          <div class="border py-3 text-center text-sm cursor-pointer">S</div>
+          <div class="border py-3 text-center text-sm cursor-pointer">M</div>
+          <div class="border py-3 text-center text-sm cursor-pointer ">L</div>
+          <div class="border py-3 text-center text-sm cursor-pointer">XL</div>
+          <div class="border py-3 text-center text-sm cursor-pointer">XXL</div>
+          <div class="border py-3 text-center text-sm cursor-pointer">XXXL</div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-6">A premium crew neck shirt crafted from high quality fabric. Designed for a relaxed yet polished look. Perfect for casual and semi-formal occasions.</p>
+
+        <div class="flex items-center gap-3 mb-6">
+          <button class="border px-4 py-2 text-lg">-</button>
+          <span>1</span>
+          <button class="border px-4 py-2 text-lg">+</button>
+        </div>
+
+        <button class="w-full bg-black text-white py-3 text-sm mb-8">ADD TO CART - PKR 3,500</button>
+
+        <div class="flex gap-6 items-start border-t pt-6">
+          <p class="font-bold text-lg">Need Help ?</p>
+          <div>
+            <p class="font-semibold">042 111 789 456</p>
+            <p class="text-sm text-gray-500">Mon-Sat: (10:00 AM to 06:00 PM)</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-gray-100 px-6 py-10 mt-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div>
+        <img src="logo.png" alt="Uniworth Logo" class="h-10 mb-3">
+        <p class="text-sm text-gray-600">Uniworth is a menswear brand, designed entirely in-house. Pakistan's no. 1 Shirt Brand.</p>
+      </div>
+      <div>
+        <h3 class="font-bold mb-3">Information</h3>
+        <ul class="text-sm space-y-2">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold mb-3">Customer Services</h3>
+        <ul class="text-sm space-y-2">
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Payment Options</a></li>
+          <li><a href="#">FAQ's</a></li>
+          <li><a href="#">Returns and Exchange</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold mb-3">Store Information</h3>
+        <ul class="text-sm space-y-2">
+          <li>042 111 789 456</li>
+          <li>+92 345 4037778</li>
+          <li>askus@uniworthshop.com</li>
+          <li>Mon-Sat: 10AM - 6PM</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
