@@ -5,28 +5,166 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Uniworth</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .mega-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      z-index: 50;
+      padding: 1.5rem;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+    }
+
+    .mega-wrapper:hover .mega-panel,
+    .mega-wrapper:focus-within .mega-panel {
+      display: grid;
+    }
+  </style>
 </head>
 <body class="bg-white">
 
-  <nav class="px-6 py-4 flex justify-between items-center border-b">
+  <nav class="relative px-6 py-4 flex justify-between items-center border-b">
     <img src="logo.png" alt="Uniworth Logo" class="h-12">
-    <ul class="hidden md:flex gap-8 text-sm font-medium">
+
+    <ul class="hidden min-[665px]:flex gap-8 text-sm font-medium items-center">
       <li><a href="index.html">Home</a></li>
       <li><a href="#">Shop</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>
+      <li class="mega-wrapper">
+        <button class="text-sm font-medium cursor-pointer bg-transparent border-none" tabindex="0">Shop by Category ▾</button>
+        <div class="mega-panel">
+          <div>
+            <h4 class="font-bold text-sm mb-3 uppercase tracking-wide">Shirts</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Casual Shirts</a></li>
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Formal Shirts</a></li>
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Crew Neck</a></li>
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Polo Shirts</a></li>
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Oversized Shirts</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-sm mb-3 uppercase tracking-wide">Suiting</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Blazers</a></li>
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Full Suits</a></li>
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Waistcoats</a></li>
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Tuxedos</a></li>
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Suit Accessories</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-sm mb-3 uppercase tracking-wide">Trousers</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Formal Trousers</a></li>
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Chinos</a></li>
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Gurkha Pants</a></li>
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Cargo Pants</a></li>
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Joggers</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-sm mb-3 uppercase tracking-wide">Denim</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Straight Fit</a></li>
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Slim Fit</a></li>
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Baggy Fit</a></li>
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Ice Blue</a></li>
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Dark Wash</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-sm mb-3 uppercase tracking-wide">Sweaters</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Crew Neck</a></li>
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">V-Neck</a></li>
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Zip-Up</a></li>
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Cardigans</a></li>
+              <li><a href="#" class="text-sm text-gray-600 hover:text-black">Hoodies</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
     </ul>
+
     <div class="flex items-center gap-4">
-      <span>🛒</span>
-      <button class="md:hidden text-2xl" onclick="document.getElementById('menu').classList.toggle('hidden')">☰</button>
+      <span id="cart-icon" class="text-xl cursor-pointer relative">🛒</span>
+      <button class="min-[665px]:hidden text-2xl" onclick="document.getElementById('menu').classList.toggle('hidden')">☰</button>
     </div>
   </nav>
 
-  <ul id="menu" class="hidden md:hidden flex flex-col gap-4 px-6 py-4 bg-white text-sm font-medium border-b">
+  <ul id="menu" class="hidden min-[665px]:hidden flex flex-col gap-2 px-6 py-4 bg-white text-sm font-medium border-b">
     <li><a href="index.html">Home</a></li>
     <li><a href="#">Shop</a></li>
     <li><a href="#">About</a></li>
     <li><a href="#">Contact</a></li>
+    <li>
+      <details>
+        <summary class="cursor-pointer font-medium py-1">Shirts</summary>
+        <ul class="pl-4 mt-2 space-y-2 text-gray-600">
+          <li><a href="#">Casual Shirts</a></li>
+          <li><a href="#">Formal Shirts</a></li>
+          <li><a href="#">Crew Neck</a></li>
+          <li><a href="#">Polo Shirts</a></li>
+          <li><a href="#">Oversized Shirts</a></li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary class="cursor-pointer font-medium py-1">Suiting</summary>
+        <ul class="pl-4 mt-2 space-y-2 text-gray-600">
+          <li><a href="#">Blazers</a></li>
+          <li><a href="#">Full Suits</a></li>
+          <li><a href="#">Waistcoats</a></li>
+          <li><a href="#">Tuxedos</a></li>
+          <li><a href="#">Suit Accessories</a></li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary class="cursor-pointer font-medium py-1">Trousers</summary>
+        <ul class="pl-4 mt-2 space-y-2 text-gray-600">
+          <li><a href="#">Formal Trousers</a></li>
+          <li><a href="#">Chinos</a></li>
+          <li><a href="#">Gurkha Pants</a></li>
+          <li><a href="#">Cargo Pants</a></li>
+          <li><a href="#">Joggers</a></li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary class="cursor-pointer font-medium py-1">Denim</summary>
+        <ul class="pl-4 mt-2 space-y-2 text-gray-600">
+          <li><a href="#">Straight Fit</a></li>
+          <li><a href="#">Slim Fit</a></li>
+          <li><a href="#">Baggy Fit</a></li>
+          <li><a href="#">Ice Blue</a></li>
+          <li><a href="#">Dark Wash</a></li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary class="cursor-pointer font-medium py-1">Sweaters</summary>
+        <ul class="pl-4 mt-2 space-y-2 text-gray-600">
+          <li><a href="#">Crew Neck</a></li>
+          <li><a href="#">V-Neck</a></li>
+          <li><a href="#">Zip-Up</a></li>
+          <li><a href="#">Cardigans</a></li>
+          <li><a href="#">Hoodies</a></li>
+        </ul>
+      </details>
+    </li>
   </ul>
 
   <div class="relative">
@@ -39,7 +177,7 @@
     </div>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 p-16 gap-1 ">
+  <div class="grid grid-cols-1 md:grid-cols-2 p-16 gap-1">
     <div class="relative">
       <img src="shopShirts.jpg" alt="Shirts" class="w-full h-[700px] object-cover">
       <div class="absolute bottom-6 left-6 text-white">
@@ -47,7 +185,6 @@
         <p class="text-2xl font-bold">Shirts</p>
       </div>
     </div>
-    
     <div class="relative">
       <img src="shopSuit.jpg" alt="Suiting" class="w-full h-[700px] object-cover">
       <div class="absolute bottom-8 left-8 text-white">
